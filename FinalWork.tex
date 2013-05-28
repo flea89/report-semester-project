@@ -5,6 +5,9 @@
 \usepackage{sidecap}
 \usepackage{pdfpages}
 \usepackage{fancyvrb}
+\usepackage{floatrow}
+\usepackage[section]{placeins}
+
 \bibliographystyle{unsrt}
 \begin{document}
 
@@ -133,7 +136,7 @@ Few core design goals that as to be reminded as you get closet to start sketchin
 Allow users to define the scope of the data in the dashboard to reflect their needs. Filters can either be global (refining scope for the entire dashboard) or local(refining scope for a specific chart or metric or view).
 
 \item \textbf{Comparison}\newline
-Ability to see two or more subsets of the data side-by-side. A line chart, for example, may let the the Admin view two geographic regions as separate lines or in the same graph lines of different colors for the same source of data with different filters applied
+Ability to see two or more subsets of the data side-by-side. A line chart, for example, may let the the Admin view two geographic regions as separate lines or in the same chart lines of different colors for the same source of data with different filters applied
 
 \item \textbf{Alerts}\newline
 Highlight information based on pre-defined criteria. Alerts may be activated when a metric goes outside of a particular threshold.  The administrator could define alerts for instance when a threshold for a first class object is reached, based on some predefined filters and more in general on whatever could be a matter of statistics both in absolute and relative value.
@@ -175,13 +178,9 @@ Moreover, what strongly characterize our sketches is the purpose of build a full
 \end{quote}
 The world is changing fast and day by day, the number of devices, platforms, and browsers that need to work on the web grows dramatically. Responsive web design represents a fundamental shift in how we'll build websites for the decade to come.
 Smartphones, tablets, Internet connected Tvs are becoming more and more popular bringing the problem of fragmentation to be put in the foreground.
-In our project we handle this problem, starting from this first part: it is clear in mind that it's fundamental to deal with it during this early stages.
-
-\subsection {Mobile UI Sketches}
-It's becoming shared thinking that, to create a compelling and responsive website, it helps to focus first on smartphone users. Start your design for small touchscreens and scale up from there. This can help ensure that your site satisfies users on any device and loads quickly on any type of Internet connections.
-We decided to use an off canvas pattern for multi-device: this layout takes advantage of space off the screen to keep content or navigation hidden until either a larger screen size allows it to be visible or a user takes action to expose it.
+In our project we handle this problem, starting from this first part: we decided to use an off canvas pattern for multi-device: this layout takes advantage of space off the screen to keep content or navigation hidden until either a larger screen size allows it to be visible or a user takes action to expose it.
 \\[0.2cm]
-\begin{figure}[h!]
+\begin{figure}[htbp]
   \caption{Facebook example of Off Canvas Pattern .}
   \centering
     \includegraphics[width=0.7\textwidth]{pics/UISketches/offCanvas}
@@ -190,30 +189,115 @@ We decided to use an off canvas pattern for multi-device: this layout takes adva
 The Off Canvas pattern is a interesting one because it doesn't force people to scroll long pages of content and navigation on small screens.1 Instead sections can be separated, labeled, and accessed when needed.
 
 
-\begin{SCfigure}
+\subsection {Mobile UI}
+It's becoming shared thinking that, to create a compelling and responsive website, it helps to focus first on smartphone users: start your design for small touchscreens and scale up from there. This can help ensure that a web application satisfies users on any device and loads quickly on any type of Internet connections.
+
+% \begin{figure}
+%   \centering
+% \includegraphics[height=0.7\textwidth]%
+%     {pics/UISketches/mobileSk1}% picture filename
+%   \caption{ This sketch represents the view of one section of the dashboard, the contents fully occupies the page size, exploiting all the space and thus allowing the user to have charts and informations larger on the page.}
+% \end{figure}
+
+
+\begin{figure}
+\floatbox[{\capbeside\thisfloatsetup{capbesideposition={left,top},capbesidewidth=4cm}}]{figure}[\FBwidth]
+{\caption{This sketch represents the view of one section of the dashboard. Contents fully occupy the page, exploiting all the space allowing the user to have charts and informations larger and more readable.}\label{fig:test}}
+{\includegraphics[width=5cm]{pics/UISketches/mobileSk1}}
+\end{figure}
+
+
+
+% \begin{figure}
+%   \centering
+% \includegraphics[height=0.7\textwidth]%
+%     {pics/UISketches/mobileSk2}% picture filename
+%   \caption{ This sketch represents the step forward the interaction with the icon floated left on the top bar. The menu slides right and the content with him: now the space is optimized for displaying the sidebar and allowing the user to easily interact with the navigation items }
+% \end{figure}
+
+
+\begin{figure}
+\floatbox[{\capbeside\thisfloatsetup{capbesideposition={right,top},capbesidewidth=4cm}}]{figure}[\FBwidth]
+{\caption{This sketch represents the step forward the interaction with the icon floated left on the top bar. The menu slides right and the content with him: now the space is optimized for displaying the sidebar and allowing the user to easily interact with the navigation items}\label{fig:test}}
+{\includegraphics[width=5cm]{pics/UISketches/mobileSk2}}
+\end{figure}
+
+\begin{figure}
+\floatbox[{\capbeside\thisfloatsetup{capbesideposition={left,top},capbesidewidth=4cm}}]{figure}[\FBwidth]
+{\caption{This sketch represents the interface to modify the options for a chart: everything goes on the background and the options panel occupies the majority of the page}\label{fig:test}}
+{\includegraphics[width=5cm]{pics/UISketches/mobileSk3}}
+\end{figure}
+\FloatBarrier
+
+% \begin{figure}
+%   \centering
+% \includegraphics[height=0.7\textwidth]%
+%     {pics/UISketches/mobileSk3}% picture filename
+%   \caption{ This sketch represents the interface to modify the options for a chart: every thing goes on the background and the options panel occupies the majority of the page }
+% \end{figure}
+
+
+\subsection{ Tablet and Desktop UI  }
+
+As suggested by the  the Off Canvas Pattern, shifting on larger screens, more and more content is visible. In our case, the sidebar menu is visible and allow a straight forward navigation in each section of the dashboard. However we decided to leave the user the possibility to close the sidebar and shift in \"Full screen mode\" to fully exploit the space provided by his larger screen. Moreover, to improve the users of bigger devices is possible to change layout of the content page to pick the one most suitable for him.
+\begin{figure}[h!]
+  \caption{Overview}
   \centering
-\includegraphics[width=0.35\textwidth]%
-    {pics/UISketches/mobileSk1}% picture filename
-  \caption{ This sketch represents the view of one section of the dashboard, the contents fully occupies the page size, exploiting all the space and thus allowing the user to have charts and informations larger on the page.}
-\end{SCfigure}
-\begin{SCfigure}
-  \centering
-\includegraphics[width=0.35\textwidth]%
-    {pics/UISketches/mobileSk2}% picture filename
-  \caption{ This sketch represents the step forward the interaction of the user with the icon floated left on the top bar. The menu slides right and the content with him: now the space is optimized for displaying the sidebar and allowing the user to easily interact with the navigation items }
-\end{SCfigure}
-\begin{SCfigure}
-  \centering
-\includegraphics[width=0.35\textwidth]%
-    {pics/UISketches/mobileSk3}% picture filename
-  \caption{ }
-\end{SCfigure}
+    \includegraphics[width=1\textwidth]{pics/UISketches/desk0}
+\end{figure}
+
+\begin{figure}
+\floatbox[{\capbeside\thisfloatsetup{capbesideposition={left,top},capbesidewidth=4cm}}]{figure}[\FBwidth]
+{\caption{This sketch represents the view of one section of the dashboard, the sidebar is visible and allow to directly navigate the dashboard. Timeline, pie, bar charts are the real content of the page}\label{fig:test}}
+{\includegraphics[width=8cm]{pics/UISketches/desk1}}
+\end{figure}
+
+\begin{figure}
+\floatbox[{\capbeside\thisfloatsetup{capbesideposition={right,top},capbesidewidth=4cm}}]{figure}[\FBwidth]
+{\caption{From this panel, directly accessible to each section of the dashboard, the user could choose the most suitable layout, choosing between: 100, 50-50, 33-33-33, 33-66. This different configurations allow to have data differently organized in the page. }\label{fig:test}}
+{\includegraphics[width=8cm]{pics/UISketches/desk1}}
+\end{figure}
 
 
+\begin{figure}
+\floatbox[{\capbeside\thisfloatsetup{capbesideposition={left,top},capbesidewidth=4cm}}]{figure}[\FBwidth]
+{\caption{This is an example of 50-50 layout making the data visualization more compact and allowing users to have the focus on more charts than the 100\% one.}\label{fig:test}}
+{\includegraphics[width=8cm]{pics/UISketches/desk3}}
+\end{figure}
+
+\begin{figure}
+\floatbox[{\capbeside\thisfloatsetup{capbesideposition={right,top},capbesidewidth=4cm}}]{figure}[\FBwidth]
+{\caption{This is an example of 50-50 layout in Full Screen Mode. This visualization allows to fully exploit the size of the screen: the user can focus on data without any distraction}\label{fig:test}}
+{\includegraphics[width=8cm]{pics/UISketches/desk4}}
+\end{figure}
+\FloatBarrier
+
+\subsection{ Charts }
+A dashboard needs to tell a story with data: charts and 
+tables are the means to highlight the right information and make them easy to read. It's critically important to choose the right chart for the right data and to design charts visualization following this six guidelines:
+\begin{itemize}
+\item \textbf{Decrease data-to-ink ratio } 
+\item \textbf{Maximize contrast }  Maximize the contrast between your data and the background
+\item \textbf{Readable Labels } 
+\item \textbf{Avoid smoothing and 3D }  Maximize the contrast between your data and the background
+\item \textbf{Sort for comprehension }
+\item \textbf{Use color variants }  
+\end{itemize}
+Starting from this principles and thinking on the type of data to display we came up with the following sketches.
+
+\begin{figure}
+\floatbox[{\capbeside\thisfloatsetup{capbesideposition={right,top},capbesidewidth=4cm}}]{figure}[\FBwidth]
+{\caption{This is how the graph panel should appear on the page: a top bar with the chart title(and possible icons for interaction), the graph itself and a legend}\label{fig:test}}
+{\includegraphics[width=10cm]{pics/UISketches/chart0}}
+\end{figure}
 
 
-
-
+\begin{figure}
+\floatbox[{\capbeside\thisfloatsetup{capbesideposition={right,top},capbesidewidth=4cm}}]{figure}[\FBwidth]
+{\caption{Sketches of all possible type of chart for the visualization of the NERD dashboard data.}\label{fig:test}}
+{\includegraphics[width=10cm]{pics/UISketches/chart1}}
+\end{figure}
+\FloatBarrier
 \end{document}
 
 
