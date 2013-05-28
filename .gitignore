@@ -14,6 +14,7 @@
 *.ind
 *.ist
 *.lof
+*.log
 *.lot
 *.maf
 *.mtc
@@ -29,4 +30,6 @@
 *.vrb
 *.xdy
 *.tdo
+/*.pdf
+*.fls
 .DS_STORE
