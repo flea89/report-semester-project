@@ -53,15 +53,15 @@
 \begin{titlepage}
 \begin{center}
 \includegraphics[width=5cm]{EURECOM_logo_quadri}
+\\[3cm]
+\textbf{\Huge{Building NERD dashboard}}
 \\[2cm]
-\textbf{\Huge{ Development of a web administration dashboard for managing the NERD framework \par}}
-\\[1cm]
 \textbf{\textsc{\LARGE{Semester Project Report}}}
 \\[0.5cm]
 \LARGE{Chillari Paolo}
 \\
 \large{Fall 2011}
-\\[7cm]
+\\[8cm]
 \columnsep3cm
 \begin{tabular}{p{8cm} p{8.5cm}}
 \small{\textbf{Supervisors:}\newline
@@ -75,53 +75,54 @@ Giuseppe Rizzo}
  \tableofcontents
 
 \chapter{Introduction}
-Dashboards have become the \emph{de facto}  face of performance management applications and are increasingly used in business intelligence (BI). The Web world  is becoming itself the world of big data, but frequently it's hard to give meaning and extract useful information from this huge amount of bytes. How this information is presented to administrators is critically important and make data understandable to human eyes.\newline
+Dashboards have become the de facto face of performance management applications and are increasingly used in business intelligence (BI). The world of web is becoming itself the world of big data, but frequently it's hard to give meaning and extract useful information from this huge amount of bytes. How this information is presented to administrators is critically important and make data understandable to human eyes.\newline
 
-There are zettabytes of data in the world today and companies, associations, research labs are drowning in information. Dashboards place  data in a visual, easy-to-understand format. The ability to see the data that you need and when you need it gives you the ability to quickly understand the current situation at any given point in time. Rather than digging through databases, logs files, spreadsheet you can consult your dashboard for a quick insight.\newline
+There are zettabytes of data in the world today and companies, associations, research labs are drowning in information. Dashboards place the data that this entities need in a visual, easy-to-understand format. The ability to see the data that you need and when you need it gives you the ability to quickly understand the current situation at any given point in time. Rather than digging through databases, logs files, spreadsheet you can consult your dashboard for a quick insight.\newline
 
 A dashboard democratizes access to big data, so that anyone  can have the right information at his fingertips.
 
 Dashboard has become integral and substantive part of web application panorama giving privates, companies, IT service providers, etc the ability to handle their business efficiently. Dashboard, as a matter of fact, could achieve different goals, from strategic to analytical or operational requirements.\newline
-The main focus of this project is to create the NERD administration dashboard, where admins can have a full overview of what is happening on their platform. The dashboard summarizes in one single location all the information that an administrator needs: from user's information to how many visits, page-views and other detailed information about the platform. In some cases, like for the NERD Application, dashboards should provide a common interface for interacting with data stored by the entire system.
+The main focus of this project is on Administration Dashboards, where admins can have a full overview of what is happening on their platform. The dashboard summarizes in one single location all the information that an administrator needs: from user's information to how many visits, page-views and other detailed information about the platform. In some cases, like for the Nerd Application, dashboards should provide a common interface for interacting with data stored by the entire system.
 
 \chapter{Similar projects}
 
 The web panorama is full of great examples of dashboards and how they became the pivot of huge businesses.
 \section{3scale}
-3scale is a management solutions for developers and companies to securely distribute, control, manage, operate and monetize their API. His API management platform is Plug and Play, configurable, flexible and scalable bringing API providers an unparalleled level of ownership, control and configuration to ensure QoS, SLA and a great user experience.
+3scale is a management solution for developers and companies to securely distribute, control, manage, operate and monetize their API. His API management platform is Plug and Play, configurable, flexible and scalable bringing API providers an unparalleled level of ownership, control and configuration to ensure QoS, SLA and a great user experience.
 3Scale exposes a Dashboard to monitor the API usage, in order to give the developer a full overview and control on the usage of his APIs.
 3scale shares with NERD some key points and therefore it  represents a good case of study.
 
 The main features:
 \begin{itemize}
 \item \textbf{Usage}\newline
- 3Scale exposes a timeline chart to show the total usage of the APIs. The timeline is navigable in time and the dashboard admin could filter data by  metrics or API methods.
+ 3Scale exposes a time-line chart to show the total usage of the APIs. The timeline is navigable in time and the dashboard admin could filter data by  metrics or API methods.
 
 \item  \textbf{Top Applications}\newline
-As for the usage, we have a another timeline chart. One of the cool features of 3Scale is that the developers have a full overview of the usage of their APIs for every application that is using it.It's possible to choose metrics and methods for our statistics.
+As for the usage, we have  another time-line chart. One of the cool features of 3Scale is that the developers have a full overview of the usage of his(their) APIs for every application that is using it.It's possible to choose metrics and methods for our statistics.
 
 \item \textbf{Daily and weekly usage}\newline
- 3Scale dashboard also allow to aggregate by hour of the day and day of the week: taking under control the load in different time of the day or different days of the week becomes easier.
+ 3Scale dashboard also allows to aggregate by hour of the day and day of the week: take(taking) under control the load in different time of the day or different days of the week becomes easier.
 
 
 \item \textbf{Other features}\newline
-As the other main dashboard services, 3Scale allows to define alerts, in order to give the developer updates about data that he cares most.
+As the (other) main dashboard services, 3Scale allows to define alerts, in order to give the developer updates about data that he cares most.
 \end{itemize}
 
 \chapter{Dashboard Design Study}
 \section{Framing the Dashboard - Structure}
-This section offers ideas about big-picture elements and building blocks to be used to construct a dashboard. \newline 
+This section offers ideas about big-picture elements and building blocks to be used to construct a dashboard. \newline The building blocks can be broken into four categories.
 \subsection{Form}
 It's important to select the form that fits the needs of the situation.
 The goal is to understandably show critical information and make it available when the audience needs it.
 \begin{itemize}
 \item  \textbf{Timeliness}\newline
-According to the most popular dashboard and, first of all, to Google Analytics, data's update follows two main patterns. In the first one data  is displayed and updated in response to a request made directly by the administrator by the UI while the second one (commonly in parallel) is to have data  displayed in real time. The administrator could see what is happening on the framework in that moment. Concerning NERD Dashboard the administrator could have, for example, a global overview of the usage of the rest APIs, how much users are currently using it, from where, what are the REST methods and entities accessed.
+Frequency of  data update
+According to the most popular dashboard and, first of all, to Google Analytics, data's update follows two main patterns. In the first one data  is displayed and updated in response to a request made directly by the administrator by the UI while the second one (commonly in parallel) is to have data  displayed in real time. The administrator could see what is happening on the framework in that moment. Concerning Nerd Dashboard the administrator could have, for example, a global overview of the usage of the rest APIs, how much users are currently using it, from where, what are the REST methods and entities accessed.
 \item \textbf{Aesthetic}\newline
-For the NERD framework this could be not the most urgent and important feature to achieve, but for a personal point of view and according to the Juiceanalytics article \cite{Juice} a good aesthetic reflects a good usability and makes the accessibility to  data easier.
+For the Nerd framework this could be not the most urgent and important feature to achieve, but for a personal point of view and according to the Juiceanalytics article \cite{Juice} a good aesthetic reflects a good usability and makes the accessibility to  data easier.
 As a matter of facts Google Analytics in the last years put huge efforts to change and improve the UI and aesthetic of the dashboard.
 \item\textbf{Mobility}\newline
-Since administrators of NERD has to travel all around the world, the chance to access data on the go is an important feature. Administrators need to have data accessible from everywhere using laptops but also tablets and smartphones. An overview of the dashboard should be accessible in every moment they need to.
+Since administrators of Nerd has to travel all around the world, the chance to access data on the go is an important feature. Administrators need to have data accessible from everywhere using laptops but also tablets and smartphones. An overview of the dashboard should be accessible in every moment they need.
 \item \textbf{Connectivity}\newline
 Depending on the amount of data that has to be accessed and how the administrator has to filter and parametrize data, it's possible to follow different patterns. 
 In order to achieve the real time features the backend module that handles the dashboard has to talk directly with data-source.
@@ -130,9 +131,9 @@ The administrator has to access data in detail, dive into all the information st
 \item \textbf{Data density}\newline
  How much information rich will views of the data be? The best structured way to achieve a balance data density is to reveal information as the administrators express interest. In other words, don't bombard the admins with all the information at once, using levels of increasing detail from 
 \item \textbf{Interactivity}\newline
-The NERD admins have to actively interact with the dashboard in order to organize, filter, define metrics on the data he needs. A great dashboard requires to be customizable and, especially for NERD, the admins have to fully interact with the data that comes from it.
+The Nerd admins have to actively interact with the dashboard in order to organize, filter, define metrics on the data he needs. A great dashboard requires to be customizable and, especially for Nerd, the admins have to fully interact with the data that comes from it.
 \item \textbf{Collaboration}\newline
-There is a team working on the network so it could be useful to cooperate on the framework. But I think that for NERD the dashboard could not be the right tool to achieve this collaboration, there are betters tools that are born to handle collaboration in the field of Computer Science Development and Research. 
+There is a team working on the network so it could be useful to cooperate on the framework. But I think that for Nerd the dashboard could not be the right tool to achieve this collaboration, there are better tools that are born to handle collaboration in the field of Computer Science Development and Research. 
 I see this tool more for a business or strictly administration dashboards.
 \end{itemize}
 \subsection{Structure}
@@ -148,7 +149,7 @@ I see this tool more for a business or strictly administration dashboards.
     The structure of last resort is to group related information into categories or a hierarchy. The structure of last resort is to group related information into categories or a hierarchy
 \end{itemize}
 \subsection{Design Principles}
-Few core design goals that have to be reminded as you get closer to start sketching your application: it is quite difficult to straightly follow simultaneously all these key design principles, instead it's better to pick one or two with higher priority to help stay focused.
+Few core design goals that as(HAVE) to be reminded as you get closer to start sketching your application:it is quite difficult to straightly follow simultaneously all these key design principles, instead it's better to pick one or two with higher priority to help stay focused.
 \begin{itemize}
     \item \textbf{Compactness/Modularity}\newline
     Dashboard could become large and unwieldy, especially when it tries to give a comprehensive view of huge business that could be, in their fullness, various and heterogeneous. Compactness is the property that a design can fit inside a human being's head.
@@ -158,7 +159,7 @@ Few core design goals that have to be reminded as you get closer to start sketch
     \item \textbf{Customizable}\newline   
     Allow users to customize the dashboard (defining the scope). 
     Does the dashboard let the admins save a view of data that they have configured? \newline
-    Does it offers easy ways to tag or highlight things that are important to them?
+    Does it offer easy ways to tag or highlight things that are important to them?
     \item \textbf{Explanation before information}\newline
     Dashboards need to give the context and explanation to understand new and unfamiliar events.Letting the data speak for itself can be a recipe for misinterpretation and confusion.
 \end{itemize}
@@ -169,22 +170,22 @@ Few core design goals that have to be reminded as you get closer to start sketch
 Allow users to define the scope of the data in the dashboard to reflect their needs. Filters can either be global (refining scope for the entire dashboard) or local(refining scope for a specific chart or metric or view).
 
 \item \textbf{Comparison}\newline
-Ability to see two or more subsets of the data side-by-side. A line chart, for example, may let the the Admin view two geographic regions as separate lines or in the same chart lines of different colors for the same source of data with different filters applied
+Ability to see two or more subsets of the data side-by-side. A line chart, for example, may let the  Admin view two geographic regions as separate lines or in the same chart lines of different colors for the same source of data with different filters applied
 
 \item \textbf{Alerts}\newline
 Highlight information based on pre-defined criteria. Alerts may be activated when a metric goes outside of a particular threshold.  The administrator could define alerts for instance when a threshold for a first class object is reached, based on some predefined filters and more in general on whatever could be a matter of statistics both in absolute and relative value.
 
 \item \textbf{Export / print}\newline
-The  admin should have the ability to export data out of the dashboard in different formats. In details, it should be possible not only to export all the data available but the exported data should reflect filters, metrics, parameters that the administrator could defined: for instance every personalized widget should be exportable as a chart or as a table of data.
+The  admin should have the ability to export data out of the dashboard in different formats. In detail, it should be possible  not only to export all the data available but the exported data should reflect filters, metrics, parameters that the administrator could defined: for instance every personalized widget should be exportable as a chart or as a table of data.
 \end{itemize}
 
 \section{Information Design}
 In this last part we provide practical tips for putting information on the page in a way that communicates effectively to our audience. How data is presented is a primary goal and it strongly affects the final result. Best practices for designing a clear, aesthetically-pleasing page are key factors.\newline
-A clear and simple interface is the primary goal and deals with limiting visual clutter to allow the user to easily navigate and understand the content on th page.
+A clear and simple interface is the primary goal and deals with limiting visual clutter to allow the user to easily navigate and understand the content on the page.
 
 \begin{itemize}
-\item \textbf{Organizing the page: } information could not be just arranged on the page without order, semantics and taking into account where people look first, where information should be to capture user's attention.
-Moreover a ``grid system'' approach brings order and coherence into the page. Finally white spaces can be used to delineate sections or help users see groupings of content in a dashboard. Using white space means sacrificing one extra chart or metric, but it can make a huge difference in user comprehension.
+\item \textbf{Organizing the page: } information could not be just arranged on the page without order, semantics and taking into account where people looks(LOOK) first, where information should be to capture user's attention.
+Moreover a \"grid system\" approach brings order and coherence into the page. Finally white spaces can be used to delineate sections or help users see groupings of content in a dashboard. Using white space means sacrificing one extra chart or metric, but it can make a huge difference in user comprehension.
 
 \item \textbf{Colors:}
 Appropriate use of color requires restraint. In our dashboard designs, we typically start by using only gray and then add colors where it conveys useful information.
@@ -203,16 +204,16 @@ Simple font framework:
 \chapter{Designing NERD dashboard}
 \section{Functionalities}
     We already talk about the aims of the Web Application and now we can dive deeper in the functionalities exposed.
-    Firstly we have a section `` Users '' where we have statistics on the number of the new users registered on NERD.eurecom.fr. We can easily navigate in time on the y-axis and aggregate data by day, week, month and year. Moreover the timeline widget allows the admins to customize the graph: through a handy modal he can add filters to data choosing dimensions, operators and values for the filters. In Addition he has the possibility to add lines to the graph, with their own filters, in order to allow the user to compare statistics with different filters.
-    Furthermore in this section we can find pie charts that allows us to have an overview of the users group by language, country and language.
-    We have then an other section where we can find statistics on entities extracted by the framework and more specifically on the entity types extracted: as for the user we can navigate data through the timeline widget, defining filters and adding new lines. Pie charts allow to see how different Language Processing Services aggregate entities, showing the ratio between different NERD Core Classes from different services.
+    Firstly we have a section `` Users '' where we have statistics on the number of the new users registered on nerd.eurecom.com. We can easily navigate in time on the y-axis and aggregate data by day, week, month and year. Moreover the timeline widget allows the admins to customize the graph: through a handy modal he can add filters to data choosing dimensions, operators and values for the filters. In Addition he has the possibility to add lines to the graph, with their own filters, in order to allow the user to compare statistics with different filters.
+    Furthermore in this section we can find pie charts that allow us to have an overview of the users group by country and language.
+    We have then another section where we can find statistics on entities extracted by the framework and more specifically on the entity types extracted: as for the user we can navigate data through the timeline widget, defining filters and adding new lines. Pie charts allow to see how different Language Processing Services aggregate entities, showing the ratio between different NERD Core Classes from different services.
     Lastly the administration can monitor the usage of the APIs with information on the number of annotations.
-    NERD Dashboard also allows the profile administrations that have their own filters: the Web Application transparently saves charts settings for the administrators
-   In this chapter we discuss the state of the art and the reasons that leads our architectural and development decisions.
+    Nerd Dashboard also allows the profile administrations that have their own filters: the Web Application transparently saves charts settings for the administrators
+   In this chapter we discuss the state of the art and the reasons that lead our architectural and development decisions.
 
 \section{State of the art}
 The web panorama is widely spread and choosing the right architecture having clear in mind the problems and goals of the project is critically important. 
-The web world during the last years is surrounded by a whirlwind of change, one of which is the dramatical increase of adoption of Single Application Architecture.\newline
+The world of the web during the last years is surrounded by a whirlwind of change, one of which is the dramatical increase of adoption of Single Application Architecture.\newline
 
 Most popular Web Application like Gmail, Google Maps, Google Drive, iCloud, GitHub, Hotmail and many others are common SPAs.
 A SPA is an application that runs inside a browser (or in a ``compatible'' environment) and does not require page reloading during use. We can think of a SPA as a thick client that is loaded from a web server. 
@@ -237,7 +238,7 @@ The main problems this architecture is facing today are:
 \end{figure}
 
 \subsection{Single Page Application Architecture}
- One of the main reasons to choose SPA is because it offers a more-native-app-like experience to the user. As we already said this kind of experience it is hard to do with other approachess.
+ One of the main reasons to choose SPA is because it offers a more-native-app-like experience to the user. As we already said this kind of experience  is hard to do with other approachess.
  Supporting rich interactions with multiple components on a page, means that those components have many more intermediate states and a server-side rendering is hard to implement for all the intermediate states - small view states do not map well to URLs.
 
 Single page apps are distinguished by their ability to redraw any part of the UI without requiring a server roundtrip to retrieve HTML. This is achieved by separating the data from the presentation by having a model layer that handles information and a view layer that reads from the models.
@@ -249,7 +250,7 @@ A single-page application (SPA), also known as single-page interface (SPI), is a
 \end{quotation}
 
 
-As well as being an evolution in Web design, SPA signals a much wider trend in the Web as a whole  separation of the functional layer as an API and the presentation layer in the form of the App (HTML5 or native):
+As well as being an evolution in Web design, SPA signals a much wider trend in the Web as a whole separation of the functional layer as an API and the presentation layer in the form of the App (HTML5 or native):
 
 The Single Page Architecture in parallel to the API Model is much more flexible than a HTML heavy page. The underlying API can be used to power a multitude of different front ends for different contexts, form factors and device types. Once the API is in-place, it can be used to serve multiple audience with different needs. \newline
 \begin{quotation}
@@ -263,10 +264,10 @@ The potential for Single Page Apps arguably is that they can provide an experien
 The pros of a SAP are :
 \begin{itemize}
     \item
-        \textbf{API oriented architecture: } Basically, it's just a deviation of classical `Server-client'', where we have the server that provides an API and where the client is a browser. Thus we have a much more modularized architecture: defined the API interface client and server are fully independent, much more testable, easier to maintain and the servers can power more heterogeneous client applications.
+        \textbf{API oriented architecture: } Basically, it's just a deviation of classical `Server-client'', where we have a  server that provides an API and where the client is a browser. Thus we have a much more modularized architecture: defined the  API interface, client and server are fully independent, much more testable, easier to maintain and the servers can power more heterogeneous client applications.
 
     \item
-    \textbf{It respond like a desktop application: } SPA has the ability to redraw any part of the UI without requiring a server round-trip to retrieve HTML.
+    \textbf{It renders like a desktop application: } SPA has the ability to redraw any part of the UI without requiring a server round-trip to retrieve HTML.
 
     \item
     \textbf{It renders like a desktop application: }
@@ -281,7 +282,7 @@ The pros of a SAP are :
     \textbf{It is instantly updated and distributed, like a website: }
      users don't need to take any action. All they need to do is reload the browser and it works.
     \item
-    \textbf{Cross-platform: }
+    \textbf{It renders like a desktop application: }
      unlike most desktop applications, a SPA works on any operating system that provides a decent browser. This is mainly considered a developer benefit, but think of users who use many devices.
 \end{itemize}
 
@@ -306,7 +307,7 @@ The pros of a SAP are :
 
             Apart from using the Google Web Toolkit, there is really no way you can avoid JavaScript in a modern web application. \newline
 
-            Using Node, the algorithms and data structures that you build can in theory run both on the client and on the server. It's easy to build context free modules and play around with where they run. 
+            Using Node, the algorithms and data structures that you build can in theory run both on the client and on the server. It's easy to build modules context free and play around with where they run. 
 
             \item
             \textbf{Consistently asynchronous}\newline
@@ -324,7 +325,7 @@ The pros of a SAP are :
                 \textbf{Npm community}
 
                 The node.js Community growth since its birth has been dramatically fast and after two years on npm you can find every module for your needs.
-                The numbers of published modules can describe better how Node.js is changing the Open Source world:
+                The numbers of published modules can describe better how Node.js is changing the world of Open Source:
 
                 \textbf{python}:  29,720 packages / 22 years = 1351 packages per year\newline
 
@@ -349,7 +350,7 @@ The pros of a SAP are :
 
         \end{itemize}
     \section{API Description}
-        The client as we already said communicates with the server through simple REST API.
+        The client ,as we already said, communicates with the server through simple REST API.
         Basically NERD dashboard retrieves information about the three first class objects from the server through GET request on the resource with some query parameters to specify which data the server has to retrieve from the mySql database.
         GET and POST requests on the resource ``filter '' allows to retrieve and update the filters used to profile the administrator.
 
@@ -450,7 +451,7 @@ The pros of a SAP are :
     \end{lstlisting}
 The return object is the same for the other GET methods on annotations and entities.
 
-An other example for the return value of a GET method on the resource Filter:
+Another example for the return value of a GET method on the resource Filter:
 
 GET /filters?entity=user
   \begin{lstlisting}[language=JSON]
@@ -477,7 +478,7 @@ GET /filters?entity=user
     The Server is composed by the main core module, where the Express application object is instantiated and where the routes are defined. 
     This module delegates the real work to three other modules, one for each resource. These modules are composed by two main methods: the first is in charge to handle the request concerning the timeline information while the second handles the request on dimensional aggregated data.
     These functions, using the query parameters parsed by express, dynamically construct queries to send to the Database Management System.
-    As we can see from the picture below, these modules don't make direct access to the storage: the access is made through a module that handles the connections pool and makes the calls to the native Node.js mySql driver.
+    As we can see from the picture belows(BELOW), these modules don't make direct access to the storage: the access is made through a module that handles the connections pool and makes the calls to the native Node.js mySql driver.
 
 \begin{figure}[ht]
   \caption{Module Diagram.}
@@ -504,7 +505,7 @@ GET /filters?entity=user
             country 
         \end{lstlisting}
         \item \textbf{SQL Connection Module}:
-            This modules takes care to call the Native mySQL drivers and effectively retrieves the data from the database
+            This module takes care to call the Native mySQL drivers and effectively retrieves the data from the database
         \item  \textbf{Express Server}
             Finally Express handles the response to the client creating the HTTP response.
     \end{enumerate}
@@ -513,7 +514,7 @@ GET /filters?entity=user
     To handle the administration profiling, sessioning and authorization we used Passport.js which allows, in conjunction with Express Session to authorize users and create session easily.
 \chapter{The Client}
  \section{Sketching}
-Sketches are a crucial phase of our project and represent the start point of the dashboard design. The Dashboard Design Study described in Chapter 2 is the guideline and we try to follow the best-practices.
+Sketches are a crucial phase of our project and represents represent the start point of the dashboard design. The Dashboard Design Study described in Chapter 2 is the guideline and we tries try to follow the best-practices.
 Moreover, what strongly characterizes our sketches is the purpose of build a fully responsive web app: 
 \begin{quote} 
     Responsive Web Design (RWD) is a web design approach aimed at crafting sites to provide an optimal viewing experience-easy reading and navigation with a minimum of resizing, panning, and scrolling-across a wide range of devices (from desktop computer monitors to mobile phones).
@@ -533,13 +534,13 @@ The Off Canvas pattern is an interesting one because it doesn't force people to 
 
 
 \subsection {Mobile UI}
-It's becoming shared thinking that, to create a compelling and responsive website, it helps to focus first on smartphone users: start your design for small touchscreens and scale up from there. This can help ensure that a web application satisfies users on any device and loads quickly on any type of Internet connections.
+It's becoming shared thinking that, to create a compelling and responsive website,  helps to focus first on smartphone users: start your design for small touchscreens and scale up from there. This can help ensure that a web application satisfies users on any device and loads quickly on any type of Internet connections.
 
 % \begin{figure}
 %   \centering
 % \includegraphics[height=0.7\textwidth]%
 %     {pics/UISketches/mobileSk1}% picture filename
-%   \caption{ This sketch represents the view of one section of the dashboard, the contents fully occupy the page size, exploiting all the space and thus allowing the user to have charts and information larger on the page.}
+%   \caption{ This sketch represents the view of one section of the dashboard, the contents fully occupies occupy the page size, exploiting all the space and thus allowing the user to have charts and information larger on the page.}
 % \end{figure}
 
 
@@ -582,7 +583,7 @@ It's becoming shared thinking that, to create a compelling and responsive websit
 
 \subsection{ Tablet and Desktop UI  }
 
-As suggested by the  the Off Canvas Pattern, shifting on larger screens, more and more content is visible. In our case, the sidebar menu is visible and allows a straight forward navigation in each section of the dashboard. However we decided to leave the user the possibility to close the sidebar and shift in `'Full screen mode'' to fully exploit the space provided by his larger screen. Moreover, to improve the users of bigger devices is possible to change layout of the content page to pick the one most suitable for him.
+As suggested by the  the Off Canvas Pattern, shifting on larger screens, more and more content is visible. In our case, the sidebar menu is visible and allows a straight forward navigation in each section of the dashboard. However we decided to leave the user the possibility to close the sidebar and shift in `'Full screen mode'' to fully exploit the space provided by his larger screen. Moreover, to improve the users of bigger devices is possible to change layout of the content page to pick the most suitable one  for him.
 \begin{figure}[H]
   \caption{Overview}
   \centering
@@ -591,7 +592,7 @@ As suggested by the  the Off Canvas Pattern, shifting on larger screens, more an
 
 \begin{figure}[H]
 \floatbox[{\capbeside\thisfloatsetup{capbesideposition={left,top},capbesidewidth=4cm}}]{figure}[\FBwidth]
-{\caption{This sketch represents the view of one section of the dashboard, the sidebar is visible and allow to directly navigate the dashboard. Timeline, pie, bar charts are the real content of the page}\label{fig:test}}
+{\caption{This sketch represents the view of one section of the dashboard, the sidebar is visible and allows to directly navigate the dashboard. Timeline, pie, bar charts are the real content of the page}\label{fig:test}}
 {\includegraphics[width=8cm]{pics/UISketches/desk1}}
 \end{figure}
 
@@ -655,20 +656,20 @@ The power of directive relies on allowing the developer to create reusable and f
 Finally we have Dependency injection: it is a design pattern that allows to make test driven development easier. With dependency injection it's easy to transparently load mocked objects in tests, which means test the modules separately and independently from the system logic.
 
  \section{Setting up the Development Workflow}
- NERD Dashboard has been developed using a few cool tools that make the developer life easier. 
+ Nerd Dashboard has been developed using a few cool tools that make the developer life easier. 
 
-One of the first tools to be aware of is Grunt which is a Javascript Task Runner. Grunt allows to automate repetitive tasks like minification, compilation, unit testing, linting, etc, the easier your job becomes.\newline
+One of the first tool(tools) to be aware of is Grunt which is a Javascript Task Runner. Grunt allows to automate repetitive tasks like minification, compilation, unit testing, linting, etc, the easier your job becomes.\newline
 Another tool intensively exploited is Compass, a CSS Authoring Framework built on Sass ( an extension of CSS3 which adds nested rules, variables, mixins, selector inheritance).
-Last but not the least is Yeoman 1.0: a collection of tools and best practices working in harmony to make developing for the web even better. Actually Yeoman could be considered a workflow that comprise three tools : yo (the scaffolding tool), grunt (the build tool) and bower (for package management). As we can see we already talked about Grunt, so the last tools we have to talk about are yo and bower.
+The last but not the least is Yeoman 1.0: a collection of tools and best practices working in harmony to make developing for the web even better. Actually Yeoman could be considered a workflow that comprises three tools : yo (the scaffolding tool), grunt (the build tool) and bower (for package management). As we can see we already talked about Grunt, so the last tools we have to talk about are yo and bower.
 
-The first allows to scaffold out a new application, writing your Grunt configuration and pulling in relevant Grunt tasks that you might need for your build ( in our case  it allows to first scaffold an AngularJS application, write the Gruntfile and moreover it allows with a simple instruction to scaffold new view, controllers, services for the web application). Bower is another great tool and allows to easily face the front-end package management: it is basically a package manager for the web.
+The first allows to scaffolds scaffold out a new application, writing your Grunt configuration and pulling in relevant Grunt tasks that you might need for your build ( in our case it allows to first scaffold an AngularJS application, write the Gruntfile and moreover it allows to scaffold new view, controllers, services for the web application). Bower is another great tool and allows to easily face the front-end package management: it is basically a package manager for the web.
 
 \section{Building the client}
 We firstly create a responsive layout for the web App that fairly follows the sketches we've done in the first design phase, creating a layout that echoes the iOs  apps for iPad.
 The layout responds in different ways in desktops, tablets and smartphones in order to guarantee the best UX on each device.
 We strongly used Twitter Bootstrap, but in order to achieve our goals and the responsiveness of the layout we fully customize the CSS.
-For the animations of the fixed side bar I used the new CSS3 transitions and transform attributes.
-We made also studies on performances on mobile devices. Initially the animation wasn't fluid, but we propose to use transform3d CSS3 attributes which make the animation hardware accelerated.
+For the animations of the fixed side bar I used the new CSS3 transitions and transform3d attributes.
+We made also studies on performances on mobile devices. Initially the animation wasn't fluid, but we propose to use transform3d CSS3 attributes which makes make the animation hardware accelerated.
 \begin{figure}[H]
   \caption{Template on desktop screen.}
   \centering
@@ -680,21 +681,21 @@ We made also studies on performances on mobile devices. Initially the animation 
     \includegraphics[width=0.3\textwidth]{pics/proto/mobileEmpty}
 \end{figure}
 
-As you can see on the pictures the sidebar is less than the 20\% on desktop screen, bigger on tablet screens and lastly on the mobile occupies the most of the page.
+As you can see on the pictures, the sidebar is less than the 20\% on desktop screen, bigger on tablet screens and lastly on the mobile occupies the most of the page.
 \section{Google Charts APIS}
 NERD Dashboard first aim is to display data to the administrators therefore choosing the right client interactive data visualization library is crucial to reach a good result.
 After a  conscientious research through the most popular Javascript libraries to display data our choice falls on Google Charts APIs.
 Google APIs exposes a lot of features from simple charts to complex hierarchical tree maps plus mechanisms to query data form external data sources.
-Creating simple charts is straightforward, simple as loading the module you need, passing a data Object that represents the information you want to display to a static method that takes care to draw your chart.
-Unfortunately, this wasn't enough for our goal therefore we customized and wrapped the APIs to allow responsive features and in particular to create a navigation and easy aggregation of data. For example in the timeline chart, we can navigate data by time, aggregate it by day, week, month and year, this feature was added to the existing APIs 
+Create creating simple charts is straightforward simple as loading the module you need, passing a data Object that represents the information you want to display to a static method that takes care to draw your chart.
+Unfortunately, this wasn't enough for our goal, therefore we customized and wrapped the APIs to allow responsive features and in particular to create a navigation and easy aggregation of data. For example in the timeline chart, we can navigate data by time, aggregate it by day, week, month and year, this feature was added to the existing APIs 
 
 \section{Directives}
 The great work behind the client development resides on the creation of the directives, that in our case are represented by the charts widgets.
-This allows to have reusable charts, flexible enough to work in different context and with different data.
+This allows to have reusable charts flexible enough to work in different context and with different data.
 We code four main directives: timeline, pie chart, geocharts and modals.
 \subsection{Timeline - pieChart - geocharts Directives} % (fold)
 This directive is the one that takes care to make usage of the Charts APIs, to handle data coming form the angular controller.
-Mainly it `'watches`' for data passed by the controlled to be fully retrieved from the server, instantiates the chart objects and call the method to draw it.
+Mainly it `'watches`' for data passed by the controlled to be fully retrieved from the server, instantiates the chart objects and calls the method to draw it.
 However this isn't the only stuff that it has to handle; this directive also takes care to draw the navigation elements, set event handler on them, redraw the graph for different screen size, define different navigation methods depending on the user agent( the navigation on the temporal axis for the timeline directive is made with buttons for desktop application and with swipe on tablet and mobile version.
 \begin{figure}[H]
   \caption{Timeline Directive}
@@ -738,26 +739,26 @@ Moreover, to build the nice navigation in the timeline graph we have already tal
 During the deployment the main issues we had to face was database performances issues.
 The database is quite large in particular the table entity has more than a million rows. This slowdown the SQL queries and the user interface became not usable: too much latency between the request and the server response.
 
-We localized the problem on the relation entity where the number of rows is higher and especially on group-by operation on NERDType and selection on confidence.
+We localized the problem on the relation entity where the number of rows is higher and especially on group-by operation on nerdType and selection on confidence.
 
 
 We decided to add indexes to speed up the performance on this queries and we achieved great results.
-We created two BTREE INDEX, the first on NERDType and the second on confidence.
+We created two BTREE INDEX, the first on nerdType and the second on confidence.
 \vspace{0.4cm}
         \begin{lstlisting}[language=SQL]
-  CREATE INDEX NERDType USING BTREE ON entity(NERDType)
+  CREATE INDEX nerdType USING BTREE ON entity(nerdType)
   CREATE INDEX confidence USING BTREE ON entity(confidence); 
         \end{lstlisting}
 \vspace{0.9cm}
-We now can compare performances on three queries that clearly underline the performance enhance:
+Now we can compare performances on three queries that clearly underline the performance enhance:
 \vspace{0.3cm}
         \begin{lstlisting}[language=SQL]
-  SELECT NERDType ,
+  SELECT nerdType ,
          COUNT(IDENTITY) AS number
   FROM entity AS e,
        annotation AS a
   WHERE e.annotationIdAnnotation = a.idAnnotation
-  GROUP BY NERDType
+  GROUP BY nerdType
   ORDER BY COUNT(IDENTITY) DESC 
         \end{lstlisting}
 \vspace{0.3cm}
@@ -790,36 +791,30 @@ This query is executed in 3.04sec without the indexes versus 0.66sec in the seco
        annotation AS a
   WHERE e.annotationIdAnnotation = a.idAnnotation
     AND confidence > "0.99"
-    AND NERDType = "http://NERD.eurecom.fr/ontology#Person"
+    AND nerdType = "http://nerd.eurecom.fr/ontology#Person"
   GROUP BY YEAR(TIMESTAMP),
            MONTH(TIMESTAMP),
            DAY(TIMESTAMP) ,
-           NERDType
+           nerdType
         \end{lstlisting}
 \vspace{0.3cm}
 This query is executed in 3.4sec without the indexes versus 1.47sec in the second case. The query is more than the 100\% slower with any index.
 
 \chapter{Future work and Conclusions} % (fold)
 \label{cha:future_work_and_conclusions}
-\section{Conclusion}
-Every minute the Web generates amount of data that, until some years ago, was even difficult to imagine. Big Data isn't an abstract concept created by some IT guru, but a tangible stream of information that flows throw the network. This data has to be collected and analyzed.Probably the goal of the years that are coming is to create some knowledge from this huge heap of information. Therefore it is crucially important to display data in a way that humans can understand it.
 \section{Future Work}
 % chapter future_work_and_conclusions (end)
-Although the current development stage is quite advanced some sections are  not yet coded.
-Testing is another crucial part we miss to focus on: the application manipulates intensively data and testing each module is critically important. Moreover AngularJs offers great features to create test units, allowing to test each service separately (mock services can be injected easily thanks to dependency injection).\newline
+Although the current development stage is quite advanced, some sections are  not yet coded.
+Testing is another crucial part we miss to focus on: the application manipulates intensively data and testing  each module is critically important. Moreover AngularJs offers great features to create  test units, allowing to test each service separately (mock services can be injected easily thanks to dependency injection).\newline
 Another important aspect is security: the server automatically creates SQL queries taking paramenters that come from the client. At the actual stage of development SQL injection could be exploited to access private data. SQL Injection prevented for the authorization process using methods exposed by the native mySql node.js drivers to escape malicious attack.
 This goals could be achieved with few efforts: the problem could be avoided sanitizing the parameters from the users(mySql drivers exposes methods to escape and check for injection attempts).\newline
-
-The last but not the least database performances could slowdown the entire system. The indexes created  will not be enough with the increasing size of the data stored.
-Moreover we think that the best way to understand what are the bottlenecks of our system is to profile the server's workload. By profiling the workload, we can find what are the most expensive queries for future tuning: time is the most important metric because, for our purposes, it is the dimension we care most
-Tools like MySQL Enterprise Monitor's query analyzer could be the best choice. It is able capture queries the server executes and return a table of tasks sorted by decreasing order of response time, instantly bubbling up the most expensive and time-consuming tasks to the top so that we will be able to see where to focus your efforts.
-It  will allow us to see the queries that are slow, as well as the queries that are fast but executed many times.
-
-Figuring out database issues is often an hard work and we think that the strategies we mentioned are good ways to analyze and resolve the issues we had.
-This work would probably bring us to think about  substantial changes to our database structure: new relations and indexes in our schema to fastly aggregate data or at least think to create materialized views to speedup performances.
-We think that materialized views could be the right path to speedup performances without changing our database structure.\newline
+ The last but not the least the database performances could slowdown the entire system. The indexes created  will not be enough with the increasing size of the data stored. We have to think about a new structure and relations in our schema to fastly aggregate data for our stats or at least think to create materialized views to speedup performances.\newline
+\section{Conclusion}
+Every minute Internet generates amount of data that, until some years ago, was even difficult to imagine. Big Data isn't an abstract concept created by some IT guru, but a tangible stream of information that flows throw the network. This data has to be collected and analyzed.Probably the goal of the years that are coming is to create some knowledge from this huge heap of information. Therefore it is crucially important to display data in a way that humans can understand ?.
 \cleardoublepage
 \addcontentsline{toc}{chapter}{Bibliography}
 \bibliography{biblio}
 \end{document}
+
+
 
